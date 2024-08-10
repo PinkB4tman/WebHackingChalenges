@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<div align="center">
+<h1>Pop empty alert</h1>
+<p>Banned chars : "(", ")", ";", "`", "[", "]", "{", "}", "<", ">", ".", "'", """, "/", "\"</p>
+</br>
+<p>http://url?p=payload</p>
+</br>
+<p>Check console after clicking:</p>
+</br>
+<button onclick="console.log(hint1)">Hint 1</button>
+</br>
+<button onclick="console.log(hint2)">Hint 2</button>
+</br>
+<button onclick="console.log(answer)">Answer</button>
+
+</div>
+
+
+
+
+
+<script>
+
+let url = window.location.href;
+let urlObj = new URL(url);
+let params = new URLSearchParams(urlObj.search);
+let payload = params.get('p');
+
+const hint1 = atob('VXJsIGVuY29kZSB5b3VyIHdheQ==');
+const hint2 = atob('dG9TdHJpbmc9YWxlcnQ7d2luZG93KzE=');
+const answer = atob('dG9TdHJpbmclM2RhbGVydCUwQXdpbmRvdyUyYjE=');
+
+function evalSafe(p) {
+
+let chars = ["(", ")", ";", "`", "[", "]", "{", "}", "<", ">", ".", "\'", "\"", "/", "\\"];
+
+for (let char of chars) {
+        if (p.includes(char)) {
+            console.log("Not 1337");
+            return;
+        }
+    }
+eval(p);
+
+}
+
+
+
+evalSafe(payload)
+
+
+ </script>
