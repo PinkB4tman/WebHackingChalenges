@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Security-Policy"
+    content="default-src 'none'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self'; img-src 'self'; frame-ancestors 'none'; object-src 'none'; frame-src 'self'; connect-src 'self';">
+<div align="center">
+    <h1>Choose your level! This time its secure we added a CSP!</h1>
+    </br>
+    <a href="../Welcome.html">Back home</a>
+    </br>
+    <p>I want to know your DOM xss level</p>
+    <p id="levelShow"></p>
+    <form id="levelForm">
+        <label for="difficulty">Your Level:</label>
+        <input type="text" id="difficulty" name="levelValue" required>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+    </br>
+    <p>HINTS(Check console after clicking)</p>
+    </br>
+    <button id="hint1">Hint 1</button>
+    </br>
+    <button id="hint2">Hint 2</button>
+    </br>
+    <button id="answer">Answer</button>
+
+</div>
+
+
+<script src="js/CSPlevelchange.js"></script>
+
+<!--Need to create this script in the future-->
+<script src="index.js"></script>
